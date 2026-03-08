@@ -138,13 +138,14 @@
         <h2 class="sec-title">Reels <span class="ratio-badge">9:16</span></h2>
         <p class="showcase-desc">Short-form content edits and motion graphics created for social media.</p>
       </div>
-      <div class="slider-arrows" id="reels-arrows">
-        <button class="arrow-btn" onclick="slide('reels',-1)">&#8592;</button>
-        <button class="arrow-btn" onclick="slide('reels',1)">&#8594;</button>
-      </div>
     </div>
-    <div class="slider-outer">
-      <div class="slider-track" id="reels-track">
+    <div class="slider-shell">
+      <div class="slider-arrows" id="reels-arrows">
+        <button class="arrow-btn" onclick="slide('reels',-1)" aria-label="Previous reel"><span class="arrow-icon left" aria-hidden="true"></span></button>
+        <button class="arrow-btn" onclick="slide('reels',1)" aria-label="Next reel"><span class="arrow-icon right" aria-hidden="true"></span></button>
+      </div>
+      <div class="slider-outer">
+        <div class="slider-track" id="reels-track">
         <!-- Cards duplicated for infinite loop -->
         <div class="reel-card">
           <div class="reel-thumb" style="background:linear-gradient(160deg,#1a1a2e,#16213e)"><iframe class="portfolio-embed" src="https://www.instagram.com/reel/DRl4vOuCCdW/embed" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
@@ -176,6 +177,7 @@
           </div>
           <p class="card-title">VFX Breakdown</p>
         </div>
+        </div>
       </div>
     </div>
     <div class="slider-dots" id="reels-dots"></div>
@@ -189,13 +191,14 @@
         <h2 class="sec-title">YouTube <span class="ratio-badge">16:9</span></h2>
         <p class="showcase-desc">Long-form video edits including YouTube content and storytelling edits.</p>
       </div>
-      <div class="slider-arrows" id="yt-arrows">
-        <button class="arrow-btn" onclick="slide('yt',-1)">&#8592;</button>
-        <button class="arrow-btn" onclick="slide('yt',1)">&#8594;</button>
-      </div>
     </div>
-    <div class="slider-outer">
-      <div class="slider-track" id="yt-track">
+    <div class="slider-shell">
+      <div class="slider-arrows" id="yt-arrows">
+        <button class="arrow-btn" onclick="slide('yt',-1)" aria-label="Previous video"><span class="arrow-icon left" aria-hidden="true"></span></button>
+        <button class="arrow-btn" onclick="slide('yt',1)" aria-label="Next video"><span class="arrow-icon right" aria-hidden="true"></span></button>
+      </div>
+      <div class="slider-outer">
+        <div class="slider-track" id="yt-track">
         <div class="yt-card">
           <div class="yt-thumb" style="background:linear-gradient(135deg,#0f1923,#1a3040)"><iframe class="portfolio-embed" src="https://drive.google.com/file/d/1NtwN1hWp0Od_P8IbBXbVs0qtuuvrE2Cl/preview" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
             <div class="yt-bar"></div>
@@ -231,6 +234,7 @@
             <div class="yt-bar"></div>
           </div>
           <p class="card-title">Podcast Edit — Full Episode</p>
+        </div>
         </div>
       </div>
     </div>

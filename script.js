@@ -92,7 +92,7 @@
     if (anyVideoPlaying() || embedPlaybackLock) return;
     s.autoTimer = setInterval(() => {
       goTo(key, s.current + 1);
-    }, 3500);
+    }, 10000);
     const outer = document.getElementById(s.trackId)?.closest('.slider-outer');
     if (outer && !outer.dataset.hoverBound) {
       outer.dataset.hoverBound = '1';
