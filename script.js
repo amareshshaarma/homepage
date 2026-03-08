@@ -30,6 +30,7 @@
     reels: { trackId:'reels-track', dotsId:'reels-dots', visibleCount:4, cardClass:'reel-card', current:0, autoTimer:null },
     yt:    { trackId:'yt-track',    dotsId:'yt-dots',    visibleCount:3, cardClass:'yt-card',    current:0, autoTimer:null },
   };
+  let embedPlaybackLock = false;
 
   function initSliders() {
     Object.entries(sliders).forEach(([key, s]) => {
@@ -88,7 +89,7 @@
   function startAuto(key) {
     const s = sliders[key];
     clearInterval(s.autoTimer);
-    if (anyVideoPlaying()) return;
+    if (anyVideoPlaying() || embedPlaybackLock) return;
     s.autoTimer = setInterval(() => {
       goTo(key, s.current + 1);
     }, 3500);
@@ -105,16 +106,51 @@
     startAuto(key);
   }
 
-  // Touch swipe
-  function addSwipe(trackId, key) {
+  // Mouse drag + touch swipe
+  function addDragSwipe(trackId, key) {
     const track = document.getElementById(trackId);
     if (!track) return;
+    const outer = track.closest('.slider-outer') || track;
+
     let startX = 0;
-    track.addEventListener('touchstart', e => startX = e.touches[0].clientX, {passive:true});
-    track.addEventListener('touchend', e => {
-      const diff = startX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) slide(key, diff > 0 ? 1 : -1);
+    let startY = 0;
+    let dragging = false;
+    const threshold = 40;
+
+    function onStart(x, y) {
+      startX = x;
+      startY = y;
+      dragging = true;
+    }
+
+    function onEnd(x, y) {
+      if (!dragging) return;
+      dragging = false;
+      const dx = startX - x;
+      const dy = startY - y;
+      if (Math.abs(dx) > threshold && Math.abs(dx) > Math.abs(dy)) {
+        slide(key, dx > 0 ? 1 : -1);
+      }
+    }
+
+    outer.addEventListener('touchstart', e => {
+      const t = e.touches[0];
+      onStart(t.clientX, t.clientY);
+    }, { passive: true });
+
+    outer.addEventListener('touchend', e => {
+      const t = e.changedTouches[0];
+      onEnd(t.clientX, t.clientY);
     });
+
+    outer.addEventListener('mousedown', e => {
+      if (e.button !== 0) return;
+      onStart(e.clientX, e.clientY);
+    });
+
+    outer.addEventListener('mouseup', e => onEnd(e.clientX, e.clientY));
+    outer.addEventListener('mouseleave', e => onEnd(e.clientX, e.clientY));
+    window.addEventListener('mouseup', e => onEnd(e.clientX, e.clientY));
   }
 
   function anyVideoPlaying() {
@@ -132,7 +168,7 @@
   }
 
   function resumeAllAuto() {
-    if (anyVideoPlaying()) return;
+    if (anyVideoPlaying() || embedPlaybackLock) return;
     Object.keys(sliders).forEach(startAuto);
   }
 
@@ -151,11 +187,47 @@
     });
   }
 
+  // Embedded players (Instagram/Drive) cannot expose pause/end reliably.
+  // Lock autoplay when user interacts with an embed and unlock on outside interaction.
+  function bindEmbeddedPlayers() {
+    const embeds = document.querySelectorAll('.portfolio-embed');
+    if (!embeds.length) return;
+
+    function lockAutoForEmbed() {
+      embedPlaybackLock = true;
+      pauseAllAuto();
+    }
+
+    function unlockAutoForEmbedIfOutside(e) {
+      if (!embedPlaybackLock) return;
+      const target = e.target;
+      if (target && target.closest && target.closest('.portfolio-embed')) return;
+      embedPlaybackLock = false;
+      resumeAllAuto();
+    }
+
+    embeds.forEach(embed => {
+      if (embed.dataset.bound === '1') return;
+      embed.dataset.bound = '1';
+      embed.addEventListener('pointerdown', lockAutoForEmbed, { passive: true });
+      embed.addEventListener('touchstart', lockAutoForEmbed, { passive: true });
+      embed.addEventListener('mousedown', lockAutoForEmbed);
+    });
+
+    if (!document.body.dataset.embedUnlockBound) {
+      document.body.dataset.embedUnlockBound = '1';
+      document.addEventListener('pointerdown', unlockAutoForEmbedIfOutside, { passive: true });
+      document.addEventListener('touchstart', unlockAutoForEmbedIfOutside, { passive: true });
+      document.addEventListener('mousedown', unlockAutoForEmbedIfOutside);
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initSliders();
     bindPortfolioVideos();
-    addSwipe('reels-track','reels');
-    addSwipe('yt-track','yt');
+    bindEmbeddedPlayers();
+    addDragSwipe('reels-track','reels');
+    addDragSwipe('yt-track','yt');
   });
 
   // Reset sliders on resize to prevent misalignment

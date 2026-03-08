@@ -400,7 +400,10 @@
   .slider-outer {
     overflow: hidden;
     width: 100%;
+    touch-action: pan-y;
+    cursor: grab;
   }
+  .slider-outer:active { cursor: grabbing; }
   .slider-track {
     display: flex;
     gap: 20px;
