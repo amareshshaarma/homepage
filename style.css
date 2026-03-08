@@ -388,7 +388,7 @@
     position: relative;
     --arrow-size: clamp(38px, 3vw, 46px);
     --arrow-icon-size: clamp(14px, 1.35vw, 18px);
-    --arrow-offset: -30px;
+    --arrow-offset: -54px;
   }
   .slider-arrows {
     position: absolute;
