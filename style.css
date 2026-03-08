@@ -388,7 +388,7 @@
     position: relative;
     --arrow-size: clamp(38px, 3vw, 46px);
     --arrow-icon-size: clamp(14px, 1.35vw, 18px);
-    --arrow-offset: clamp(0px, 0.9vw, 8px);
+    --arrow-offset: -30px;
   }
   .slider-arrows {
     position: absolute;
@@ -770,8 +770,25 @@
     .about-left, .about-right { padding: 48px 20px; }
 
     .showcase-block { padding: 48px 20px 40px; }
-    .reel-card { flex: 0 0 80%; }
-    .yt-card { flex: 0 0 90%; }
+    .slider-outer {
+      padding-inline: 16px;
+      box-sizing: border-box;
+    }
+    .reel-card { flex: 0 0 100%; }
+    .yt-card { flex: 0 0 100%; }
+    .slider-arrows .arrow-btn {
+      width: 28px;
+      height: 44px;
+      border: none;
+      background: rgba(255,255,255,.14);
+      color: rgba(255,255,255,.92);
+      border-radius: 10px;
+    }
+    .slider-arrows { top: 42%; }
+    .yt-block .slider-arrows { top: 34%; }
+    .slider-arrows .arrow-btn:first-child { left: 0; }
+    .slider-arrows .arrow-btn:last-child { right: 0; }
+    .arrow-icon { width: 14px; height: 14px; stroke-width: 2.6; }
 
     .services { padding: 48px 20px; }
     .srv-grid { grid-template-columns: 1fr; }
@@ -798,13 +815,14 @@
     .about-left, .about-right,
     .skills-left, .skills-right { padding: 40px 16px; }
     .showcase-block { padding: 40px 16px 32px; }
+    .slider-outer { padding-inline: 12px; }
     .services { padding: 40px 16px; }
     .srv-card { padding: 28px 20px; }
     .cta { margin: 24px 16px; padding: 36px 20px; }
     footer { padding: 24px 16px; }
     .stats-strip { grid-template-columns: 1fr 1fr; }
     .stat { padding: 24px 12px; }
-    .reel-card { flex: 0 0 88%; }
-    .yt-card { flex: 0 0 94%; }
+    .reel-card { flex: 0 0 100%; }
+    .yt-card { flex: 0 0 100%; }
     .stat-n { font-size: 1.6rem; }
   }
