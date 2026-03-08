@@ -223,10 +223,10 @@
     flex-shrink:0;
     justify-self: end;
     align-self: center;
-    margin-right: 24px;
+    margin-right: 72px;
   }
   .photo-ring {
-    width: 320px; height: 320px;
+    width: 410px; height: 410px;
     border-radius: 50%;
     background: var(--yellow);
     position: relative;
@@ -621,7 +621,7 @@
     nav { padding: 20px 40px; }
     .hero { padding: 120px 40px 80px; gap: 40px; }
     .hero-photo { margin-right: 0; }
-    .photo-ring { width: 260px; height: 260px; }
+    .photo-ring { width: 310px; height: 310px; }
     .stats-strip { padding: 0; }
     .stat { padding: 48px 32px; }
     .about-left, .about-right { padding: 80px 40px; }
@@ -663,7 +663,7 @@
       justify-content: center;
       margin: 0 auto;
     }
-    .photo-ring { width: 200px; height: 200px; }
+    .photo-ring { width: 240px; height: 240px; }
     .photo-badge {
       bottom: -8px; right: -8px;
       padding: 8px 12px;
@@ -728,7 +728,7 @@
     nav { padding: 16px 20px; }
 
     .hero { padding: 90px 20px 48px; gap: 32px; }
-    .photo-ring { width: 160px; height: 160px; }
+    .photo-ring { width: 190px; height: 190px; }
 
     .stats-strip { grid-template-columns: 1fr 1fr; }
     .stat { padding: 28px 16px; }
@@ -759,7 +759,7 @@
   @media (max-width: 360px) {
     nav { padding: 14px 16px; }
     .hero { padding: 80px 16px 40px; }
-    .photo-ring { width: 140px; height: 140px; }
+    .photo-ring { width: 170px; height: 170px; }
     .hero-actions { flex-direction: column; width: 100%; }
     .btn-yellow, .btn-outline { width: 100%; text-align: center; }
     .about-left, .about-right,
