@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <title>Reveal Animations — Amaresh Sharma</title>
+  <title>Reveal Animations - Amaresh Sharma</title>
   <style>
     /* Reusable reveal animation classes.
        Add class="reveal" to any element.
@@ -25,8 +25,8 @@
 <body>
   <!--
     USAGE:
-    1. Add this <link> to your page head:
-       <link rel="stylesheet" href="reveal.html"> (or copy styles to style.css)
+    1. If split into a CSS file, add this to your page head:
+       <link rel="stylesheet" href="reveal.css"> (or copy styles to style.css)
 
     2. Add class="reveal" to any element you want to animate on scroll:
        <div class="reveal reveal-delay-1">...</div>
@@ -34,7 +34,7 @@
     3. Include this script at bottom of page (or in script.js):
   -->
   <script>
-    // Scroll reveal — attach to elements with class "reveal"
+    // Scroll reveal - attach to elements with class "reveal"
     const revealEls = document.querySelectorAll('.reveal');
     if (revealEls.length) {
       const revealObserver = new IntersectionObserver(entries => {
@@ -50,3 +50,4 @@
   </script>
 </body>
 </html>
+

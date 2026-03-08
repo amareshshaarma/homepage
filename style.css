@@ -384,18 +384,24 @@
     margin-left: 12px;
   }
 
-  .slider-shell { position: relative; }
+  .slider-shell {
+    position: relative;
+    --arrow-size: clamp(38px, 3vw, 46px);
+    --arrow-icon-size: clamp(14px, 1.35vw, 18px);
+    --arrow-offset: clamp(0px, 0.9vw, 8px);
+  }
   .slider-arrows {
     position: absolute;
     left: 0;
     right: 0;
-    top: 39%;
+    top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
     z-index: 5;
   }
   .arrow-btn {
-    width: 44px; height: 44px;
+    width: var(--arrow-size);
+    height: var(--arrow-size);
     padding: 0;
     background: transparent;
     border: 2px solid rgba(245,242,235,.7);
@@ -409,16 +415,17 @@
     -webkit-appearance: none;
   }
   .arrow-icon {
-    width: 12px;
-    height: 12px;
-    border-top: 3px solid currentColor;
-    border-right: 3px solid currentColor;
+    width: var(--arrow-icon-size);
+    height: var(--arrow-icon-size);
     display: block;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 3.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
-  .arrow-icon.left { transform: rotate(-135deg); }
-  .arrow-icon.right { transform: rotate(45deg); }
-  .slider-arrows .arrow-btn:first-child { left: -8px; }
-  .slider-arrows .arrow-btn:last-child { right: -8px; }
+  .slider-arrows .arrow-btn:first-child { left: var(--arrow-offset); }
+  .slider-arrows .arrow-btn:last-child { right: var(--arrow-offset); }
   .arrow-btn:hover { border-color: var(--yellow); color: var(--yellow); background: var(--yellow-dim); }
 
   .slider-outer {
@@ -717,8 +724,6 @@
     /* Showcase */
     .showcase-block { padding: 60px 24px 48px; }
     .showcase-header { flex-direction: column; align-items: flex-start; }
-    .slider-arrows .arrow-btn:first-child { left: 0; }
-    .slider-arrows .arrow-btn:last-child { right: 0; }
     .reel-card { flex: 0 0 calc((100% - 16px) / 2); }
     .yt-card { flex: 0 0 100%; }
     .slider-track { gap: 16px; }
@@ -781,8 +786,6 @@
 
     .btn-yellow, .btn-outline { padding: 13px 24px; }
 
-    .arrow-btn { width: 40px; height: 40px; }
-    .arrow-icon { width: 10px; height: 10px; border-top-width: 2.5px; border-right-width: 2.5px; }
   }
 
   /* ── Small phone: 360px ── */
