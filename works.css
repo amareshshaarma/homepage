@@ -1,0 +1,51 @@
+/* ── WORKS PAGE SPECIFIC STYLES ── */
+
+.nav-logo {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: .85rem;
+  letter-spacing: .08em;
+  color: var(--white);
+}
+
+.nav-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color .2s;
+}
+.nav-back:hover { color: var(--yellow); }
+
+.works-hero {
+  padding: 60px 56px 0;
+  border-bottom: 1px solid var(--border);
+}
+.works-hero-label {
+  font-size: .68rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 16px;
+  display: block;
+}
+.works-hero-title {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+
+@media (max-width: 768px) {
+  .works-hero { padding: 40px 24px 0; }
+  .nav-logo { font-size: .72rem; }
+}
+
+@media (max-width: 480px) {
+  .works-hero { padding: 32px 20px 0; }
+}

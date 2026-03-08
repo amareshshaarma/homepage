@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Works — Amaresh Sharma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Syne:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="works.css"/>
+</head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-socials">
+      <a href="index.html" class="nav-back" title="Back to Home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      </a>
+    </div>
+    <div class="nav-logo">AMARESH SHARMA</div>
+    <button class="nav-menu" onclick="openNav()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- NAV DRAWER -->
+  <div class="nav-overlay" id="nav-overlay" onclick="closeNav()"></div>
+  <div class="nav-drawer" id="nav-drawer">
+    <button class="nav-drawer-close" onclick="closeNav()">✕</button>
+    <a href="index.html" onclick="closeNav()">Home</a>
+    <a href="index.html#about" onclick="closeNav()">About</a>
+    <a href="works.html" onclick="closeNav()">Work</a>
+    <a href="index.html#services" onclick="closeNav()">Services</a>
+    <a href="index.html#skills" onclick="closeNav()">Skills</a>
+    <a href="contact.html" onclick="closeNav()">Contact</a>
+  </div>
+
+  <div style="padding-top: 100px;">
+    <!-- SHOWCASE -->
+<section class="showcase" id="showcase">
+
+  <!-- ── REELS ── -->
+  <div class="showcase-block">
+    <div class="showcase-header">
+      <div>
+        <span class="sec-label">Portfolio</span>
+        <h2 class="sec-title">Reels <span class="ratio-badge">9:16</span></h2>
+        <p class="showcase-desc">Short-form content edits and motion graphics created for social media.</p>
+      </div>
+      <div class="slider-arrows" id="reels-arrows">
+        <button class="arrow-btn" onclick="slide('reels',-1)">&#8592;</button>
+        <button class="arrow-btn" onclick="slide('reels',1)">&#8594;</button>
+      </div>
+    </div>
+    <div class="slider-outer">
+      <div class="slider-track" id="reels-track">
+        <!-- Cards duplicated for infinite loop -->
+        <div class="reel-card">
+          <div class="reel-thumb" style="background:linear-gradient(160deg,#1a1a2e,#16213e)"><iframe class="portfolio-embed" src="https://www.instagram.com/reel/DRl4vOuCCdW/embed" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="card-title">Cinematic Travel Reel</p>
+        </div>
+        <div class="reel-card">
+          <div class="reel-thumb" style="background:linear-gradient(160deg,#1b2838,#2a475e)"><iframe class="portfolio-embed" src="https://www.instagram.com/reel/DPiYTl8iB8T/embed" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="card-title">Brand Promo Cut</p>
+        </div>
+        <div class="reel-card">
+          <div class="reel-thumb" style="background:linear-gradient(160deg,#2d1b3d,#4a2060)"><iframe class="portfolio-embed" src="https://www.instagram.com/reel/DRhMB5_D5q7/embed" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="card-title">Motion Typography</p>
+        </div>
+        <div class="reel-card">
+          <div class="reel-thumb" style="background:linear-gradient(160deg,#1a2e1a,#2d5a2d)"><iframe class="portfolio-embed" src="https://www.instagram.com/reel/DMIEj52vPYh/embed" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="card-title">Product Showcase</p>
+        </div>
+        <div class="reel-card">
+          <div class="reel-thumb" style="background:linear-gradient(160deg,#2e1a1a,#5a2d2d)"><iframe class="portfolio-embed" src="https://www.instagram.com/reel/DLUeA9Hvam-/embed" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="card-title">Event Highlight</p>
+        </div>
+        <div class="reel-card">
+          <div class="reel-thumb" style="background:linear-gradient(160deg,#1e2a1a,#3a5020)"><iframe class="portfolio-embed" src="https://www.instagram.com/reel/DNNpe03Proo/embed" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="card-title">VFX Breakdown</p>
+        </div>
+      </div>
+    </div>
+    <div class="slider-dots" id="reels-dots"></div>
+  </div>
+
+  <!-- ── YOUTUBE ── -->
+  <div class="showcase-block yt-block">
+    <div class="showcase-header">
+      <div>
+        <span class="sec-label">Long-form</span>
+        <h2 class="sec-title">YouTube <span class="ratio-badge">16:9</span></h2>
+        <p class="showcase-desc">Long-form video edits including YouTube content and storytelling edits.</p>
+      </div>
+      <div class="slider-arrows" id="yt-arrows">
+        <button class="arrow-btn" onclick="slide('yt',-1)">&#8592;</button>
+        <button class="arrow-btn" onclick="slide('yt',1)">&#8594;</button>
+      </div>
+    </div>
+    <div class="slider-outer">
+      <div class="slider-track" id="yt-track">
+        <div class="yt-card">
+          <div class="yt-thumb" style="background:linear-gradient(135deg,#0f1923,#1a3040)"><iframe class="portfolio-embed" src="https://drive.google.com/file/d/1NtwN1hWp0Od_P8IbBXbVs0qtuuvrE2Cl/preview" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            <div class="yt-bar"></div>
+          </div>
+          <p class="card-title">Documentary Edit — The Journey</p>
+        </div>
+        <div class="yt-card">
+          <div class="yt-thumb" style="background:linear-gradient(135deg,#1a1a0f,#3a3010)"><iframe class="portfolio-embed" src="https://drive.google.com/file/d/1NtwN1hWp0Od_P8IbBXbVs0qtuuvrE2Cl/preview" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            <div class="yt-bar"></div>
+          </div>
+          <p class="card-title">Brand Story Film</p>
+        </div>
+        <div class="yt-card">
+          <div class="yt-thumb" style="background:linear-gradient(135deg,#1a0f1a,#340030)"><iframe class="portfolio-embed" src="https://drive.google.com/file/d/1IQuMDhsI2YdkvLrpyWg4IkO5_hyNBbQh/preview" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            <div class="yt-bar"></div>
+          </div>
+          <p class="card-title">Tech Review Edit</p>
+        </div>
+        <div class="yt-card">
+          <div class="yt-thumb" style="background:linear-gradient(135deg,#0f1a0f,#1a3820)"><iframe class="portfolio-embed" src="https://drive.google.com/file/d/1JsnZTONkJmi4RIGXKJuheStyE02neARx/preview" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            <div class="yt-bar"></div>
+          </div>
+          <p class="card-title">Travel Vlog Cinematic</p>
+        </div>
+        <div class="yt-card">
+          <div class="yt-thumb" style="background:linear-gradient(135deg,#1a100f,#382018)"><iframe class="portfolio-embed" src="https://drive.google.com/file/d/1gx25MkEQBSAN6IsVEDlKXGbiAdWEG-Xu/preview" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            <div class="yt-bar"></div>
+          </div>
+          <p class="card-title">Motivational Montage</p>
+        </div>
+        <div class="yt-card">
+          <div class="yt-thumb" style="background:linear-gradient(135deg,#0a0a1a,#10103a)"><iframe class="portfolio-embed" src="https://drive.google.com/file/d/1MesLxCWcbiDvdhsTUIxrO47akzvmCDyX/preview" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            <div class="yt-bar"></div>
+          </div>
+          <p class="card-title">Podcast Edit — Full Episode</p>
+        </div>
+      </div>
+    </div>
+    <div class="slider-dots" id="yt-dots"></div>
+  </div>
+
+</section>
+  </div>
+  <script src="script.js"></script>
+  <script src="works.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

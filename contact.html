@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Amaresh Sharma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Syne:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="contact.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-socials">
+      <a href="index.html" class="nav-back" title="Back to Home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      </a>
+    </div>
+    <div class="nav-logo">AMARESH SHARMA</div>
+    <button class="nav-menu" onclick="openNav()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- NAV DRAWER -->
+  <div class="nav-overlay" id="nav-overlay" onclick="closeNav()"></div>
+  <div class="nav-drawer" id="nav-drawer">
+    <button class="nav-drawer-close" onclick="closeNav()">✕</button>
+    <a href="index.html" onclick="closeNav()">Home</a>
+    <a href="index.html#about" onclick="closeNav()">About</a>
+    <a href="works.html" onclick="closeNav()">Work</a>
+    <a href="index.html#services" onclick="closeNav()">Services</a>
+    <a href="index.html#skills" onclick="closeNav()">Skills</a>
+    <a href="contact.html" onclick="closeNav()">Contact</a>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-page" id="contact">
+    <div class="contact-left">
+      <span class="sec-label">Get In Touch</span>
+      <h1 class="contact-title">Let's Work<br><span class="contact-title-accent">Together</span></h1>
+      <p class="contact-desc">Have a project in mind? I'd love to hear about it. Send me a message and let's create something amazing.</p>
+
+      <div class="contact-info-list">
+        <div class="contact-info-item">
+          <span class="contact-info-icon">✉</span>
+          <div>
+            <p class="contact-info-label">Email</p>
+            <a href="mailto:amareshshaarma@gmail.com" class="contact-info-value">amareshshaarma@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-icon">📍</span>
+          <div>
+            <p class="contact-info-label">Location</p>
+            <p class="contact-info-value">India — Remote Worldwide</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-icon">⚡</span>
+          <div>
+            <p class="contact-info-label">Response Time</p>
+            <p class="contact-info-value">Within 24 hours</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-socials">
+        <a href="https://www.instagram.com/amareshskills/" class="contact-social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.youtube.com/@captainamaresh" class="contact-social-link" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.linkedin.com/in/amareshsharma/" class="contact-social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <div class="contact-form-wrap">
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" class="form-input" placeholder="Amaresh Sharma" id="name"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="you@example.com" id="email"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-input form-textarea" placeholder="Tell me about your project..." id="message"></textarea>
+        </div>
+        <button class="form-submit" onclick="handleSubmit()">
+          Send Message <span class="submit-arrow">→</span>
+        </button>
+        <p class="form-note" id="form-note"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot-name">AMARESH SHARMA</div>
+    <div class="foot-copy">© 2025 All rights reserved</div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="works.html">Work</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="contact.js"></script>
+</body>
+</html>
