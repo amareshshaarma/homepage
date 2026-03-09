@@ -129,6 +129,17 @@ select.form-input option { background: #111; }
   text-align: center;
 }
 
+/* Light theme fixes */
+html[data-theme="light"] .contact-right { background: #ffffff; }
+html[data-theme="light"] .contact-desc { color: rgba(17,19,23,.76); }
+html[data-theme="light"] .contact-info-value { color: var(--white); }
+html[data-theme="light"] .form-input {
+  background: rgba(17,19,23,.03);
+  color: var(--white);
+}
+html[data-theme="light"] .form-input:focus { background: rgba(212,245,14,.12); }
+html[data-theme="light"] select.form-input option { background: #ffffff; color: #111317; }
+
 /* Responsive */
 @media (max-width: 1024px) {
   .contact-left, .contact-right { padding: 60px 40px; }

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact — Amaresh Sharma</title>
+  <title>Contact &#8212; Amaresh Sharma</title>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Syne:wght@400;500;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="contact.css"/>
@@ -26,7 +26,8 @@
   <!-- NAV DRAWER -->
   <div class="nav-overlay" id="nav-overlay" onclick="closeNav()"></div>
   <div class="nav-drawer" id="nav-drawer">
-    <button class="nav-drawer-close" onclick="closeNav()">✕</button>
+    <button class="nav-theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">&#9728;</button>
+    <button class="nav-drawer-close" onclick="closeNav()">&#10005;</button>
     <a href="index.html" onclick="closeNav()">Home</a>
     <a href="index.html#about" onclick="closeNav()">About</a>
     <a href="works.html" onclick="closeNav()">Work</a>
@@ -44,21 +45,21 @@
 
       <div class="contact-info-list">
         <div class="contact-info-item">
-          <span class="contact-info-icon">✉</span>
+          <span class="contact-info-icon">&#9993;</span>
           <div>
             <p class="contact-info-label">Email</p>
             <a href="mailto:amareshshaarma@gmail.com" class="contact-info-value">amareshshaarma@gmail.com</a>
           </div>
         </div>
         <div class="contact-info-item">
-          <span class="contact-info-icon">📍</span>
+          <span class="contact-info-icon">&#128205;</span>
           <div>
             <p class="contact-info-label">Location</p>
-            <p class="contact-info-value">India — Remote Worldwide</p>
+            <p class="contact-info-value">India &#8212; Remote Worldwide</p>
           </div>
         </div>
         <div class="contact-info-item">
-          <span class="contact-info-icon">⚡</span>
+          <span class="contact-info-icon">&#9889;</span>
           <div>
             <p class="contact-info-label">Response Time</p>
             <p class="contact-info-value">Within 24 hours</p>
@@ -88,7 +89,7 @@
           <textarea class="form-input form-textarea" placeholder="Tell me about your project..." id="message"></textarea>
         </div>
         <button class="form-submit" onclick="handleSubmit()">
-          Send Message <span class="submit-arrow">→</span>
+          Send Message <span class="submit-arrow">&#8594;</span>
         </button>
         <p class="form-note" id="form-note"></p>
       </div>
@@ -98,7 +99,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="foot-name">AMARESH SHARMA</div>
-    <div class="foot-copy">© 2025 All rights reserved</div>
+    <div class="foot-copy">&#169; 2025 All rights reserved</div>
     <div class="foot-links">
       <a href="index.html">Home</a>
       <a href="works.html">Work</a>
@@ -110,3 +111,4 @@
   <script src="contact.js"></script>
 </body>
 </html>
+

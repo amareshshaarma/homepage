@@ -1,4 +1,4 @@
-// ── NAV DRAWER ──
+// â”€â”€ NAV DRAWER â”€â”€
   function openNav() {
     document.getElementById('nav-drawer').classList.add('open');
     document.getElementById('nav-overlay').classList.add('open');
@@ -10,7 +10,29 @@
     document.body.style.overflow = '';
   }
 
-  // ── RESPONSIVE CARD COUNT ──
+  function setTheme(theme) {
+    const root = document.documentElement;
+    const next = theme === 'light' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    document.querySelectorAll('.nav-theme-toggle').forEach(btn => {
+      btn.innerHTML = next === 'dark' ? '&#9728;' : '&#9790;';
+      btn.setAttribute('aria-label', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      btn.setAttribute('title', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    });
+  }
+
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  }
+
+  (function initTheme() {
+    const saved = localStorage.getItem('theme');
+    setTheme(saved === 'light' ? 'light' : 'dark');
+  })();
+
+  // â”€â”€ RESPONSIVE CARD COUNT â”€â”€
   function getVisibleCount(key) {
     const w = window.innerWidth;
     if (key === 'reels') {
@@ -25,9 +47,10 @@
     }
   }
 
-  // ── SLIDER ENGINE ──
+  // â”€â”€ SLIDER ENGINE â”€â”€
   const sliders = {
     reels: { trackId:'reels-track', dotsId:'reels-dots', visibleCount:4, cardClass:'reel-card', current:0, autoTimer:null },
+    ai:    { trackId:'ai-track',    dotsId:'ai-dots',    visibleCount:4, cardClass:'reel-card', current:0, autoTimer:null },
     yt:    { trackId:'yt-track',    dotsId:'yt-dots',    visibleCount:3, cardClass:'yt-card',    current:0, autoTimer:null },
   };
   let embedPlaybackLock = false;
@@ -227,6 +250,7 @@
     bindPortfolioVideos();
     bindEmbeddedPlayers();
     addDragSwipe('reels-track','reels');
+    addDragSwipe('ai-track','ai');
     addDragSwipe('yt-track','yt');
   });
 
@@ -254,3 +278,5 @@
       entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('on')});
     },{threshold:.3}).observe(skillsSection);
   }
+
+

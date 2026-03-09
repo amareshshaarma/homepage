@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Works — Amaresh Sharma</title>
+  <title>Works &#8212; Amaresh Sharma</title>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Syne:wght@400;500;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="works.css"/>
@@ -25,7 +25,8 @@
   <!-- NAV DRAWER -->
   <div class="nav-overlay" id="nav-overlay" onclick="closeNav()"></div>
   <div class="nav-drawer" id="nav-drawer">
-    <button class="nav-drawer-close" onclick="closeNav()">✕</button>
+    <button class="nav-theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">&#9728;</button>
+    <button class="nav-drawer-close" onclick="closeNav()">&#10005;</button>
     <a href="index.html" onclick="closeNav()">Home</a>
     <a href="index.html#about" onclick="closeNav()">About</a>
     <a href="works.html" onclick="closeNav()">Work</a>
@@ -38,11 +39,11 @@
     <!-- SHOWCASE -->
 <section class="showcase" id="showcase">
 
-  <!-- ── REELS ── -->
+  <!-- â”€â”€ REELS â”€â”€ -->
   <div class="showcase-block">
     <div class="showcase-header">
       <div>
-        <span class="sec-label">Portfolio</span>
+        <span class="sec-label">AI-powered</span>
         <h2 class="sec-title">Reels <span class="ratio-badge">9:16</span></h2>
         <p class="showcase-desc">Short-form content edits and motion graphics created for social media.</p>
       </div>
@@ -91,7 +92,58 @@
     <div class="slider-dots" id="reels-dots"></div>
   </div>
 
-  <!-- ── YOUTUBE ── -->
+  <!-- â”€â”€ AI VIDEO GENERATION â”€â”€ -->
+  <div class="showcase-block" id="ai-video-generation">
+    <div class="showcase-header">
+      <div>
+        <span class="sec-label">AI-powered</span>
+        <h2 class="sec-title">AI Video Generation <span class="ratio-badge">9:16</span></h2>
+        <p class="showcase-desc">AI-powered video generation using modern generative tools to create visuals, animations, and creative video content quickly and efficiently.</p>
+      </div>
+    </div>
+    <div class="slider-shell">
+      <div class="slider-arrows" id="ai-arrows">
+        <button class="arrow-btn" onclick="slide('ai',-1)" aria-label="Previous AI reel"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5 L8 12 L15 19"/></svg></button>
+        <button class="arrow-btn" onclick="slide('ai',1)" aria-label="Next AI reel"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5 L16 12 L9 19"/></svg></button>
+      </div>
+      <div class="slider-outer">
+        <div class="slider-track" id="ai-track">
+        <div class="reel-card">
+          <div class="reel-thumb" style="background:linear-gradient(160deg,#1a1a2e,#16213e)"><iframe class="portfolio-embed" src="https://www.instagram.com/reel/DRl4vOuCCdW/embed" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="card-title">AI Cinematic Prompt Film</p>
+        </div>
+        <div class="reel-card">
+          <div class="reel-thumb" style="background:linear-gradient(160deg,#1b2838,#2a475e)"><iframe class="portfolio-embed" src="https://www.instagram.com/reel/DPiYTl8iB8T/embed" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="card-title">AI Brand Concept Reel</p>
+        </div>
+        <div class="reel-card">
+          <div class="reel-thumb" style="background:linear-gradient(160deg,#2d1b3d,#4a2060)"><iframe class="portfolio-embed" src="https://www.instagram.com/reel/DRhMB5_D5q7/embed" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="card-title">AI Motion Typography</p>
+        </div>
+        <div class="reel-card">
+          <div class="reel-thumb" style="background:linear-gradient(160deg,#1a2e1a,#2d5a2d)"><iframe class="portfolio-embed" src="https://www.instagram.com/reel/DMIEj52vPYh/embed" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="card-title">AI Product Visualization</p>
+        </div>
+        <div class="reel-card">
+          <div class="reel-thumb" style="background:linear-gradient(160deg,#2e1a1a,#5a2d2d)"><iframe class="portfolio-embed" src="https://www.instagram.com/reel/DLUeA9Hvam-/embed" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="card-title">AI Event Teaser Cut</p>
+        </div>
+        <div class="reel-card">
+          <div class="reel-thumb" style="background:linear-gradient(160deg,#1e2a1a,#3a5020)"><iframe class="portfolio-embed" src="https://www.instagram.com/reel/DNNpe03Proo/embed" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="card-title">AI VFX Breakdown</p>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="slider-dots" id="ai-dots"></div>
+  </div>
+  <!-- â”€â”€ YOUTUBE â”€â”€ -->
   <div class="showcase-block yt-block">
     <div class="showcase-header">
       <div>
@@ -111,7 +163,7 @@
           <div class="yt-thumb" style="background:linear-gradient(135deg,#0f1923,#1a3040)"><iframe class="portfolio-embed" src="https://drive.google.com/file/d/1NtwN1hWp0Od_P8IbBXbVs0qtuuvrE2Cl/preview" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
             <div class="yt-bar"></div>
           </div>
-          <p class="card-title">Documentary Edit — The Journey</p>
+          <p class="card-title">Documentary Edit &#8212; The Journey</p>
         </div>
         <div class="yt-card">
           <div class="yt-thumb" style="background:linear-gradient(135deg,#1a1a0f,#3a3010)"><iframe class="portfolio-embed" src="https://drive.google.com/file/d/1NtwN1hWp0Od_P8IbBXbVs0qtuuvrE2Cl/preview" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
@@ -141,7 +193,7 @@
           <div class="yt-thumb" style="background:linear-gradient(135deg,#0a0a1a,#10103a)"><iframe class="portfolio-embed" src="https://drive.google.com/file/d/1MesLxCWcbiDvdhsTUIxrO47akzvmCDyX/preview" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
             <div class="yt-bar"></div>
           </div>
-          <p class="card-title">Podcast Edit — Full Episode</p>
+          <p class="card-title">Podcast Edit &#8212; Full Episode</p>
         </div>
         </div>
       </div>
@@ -155,6 +207,15 @@
   <script src="works.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 
