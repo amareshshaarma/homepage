@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop &#8212; Amaresh Sharma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Syne:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="shop.css"/>
+</head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-socials">
+      <a href="index.html" class="nav-back" title="Back to Home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      </a>
+    </div>
+    <div class="nav-logo">AMARESH SHARMA</div>
+    <button class="nav-menu" onclick="openNav()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- NAV DRAWER -->
+  <div class="nav-overlay" id="nav-overlay" onclick="closeNav()"></div>
+  <div class="nav-drawer" id="nav-drawer">
+    <button class="nav-theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">&#9728;</button>
+    <button class="nav-drawer-close" onclick="closeNav()">&#10005;</button>
+    <a href="index.html" onclick="closeNav()">Home</a>
+    <a href="index.html#about" onclick="closeNav()">About</a>
+    <a href="works.html" onclick="closeNav()">Work</a>
+    <a href="shop.html" onclick="closeNav()">Shop</a>
+    <a href="index.html#services" onclick="closeNav()">Services</a>
+    <a href="index.html#skills" onclick="closeNav()">Skills</a>
+    <a href="contact.html" onclick="closeNav()">Contact</a>
+  </div>
+
+  <main class="shop-page">
+    <section class="shop-hero">
+      <span class="sec-label">Digital Products</span>
+      <h1 class="shop-title">Creator Shop</h1>
+      <p class="shop-desc">3 free resources ready to download and use in your edits.</p>
+    </section>
+
+    <section class="shop-grid">
+      <article class="shop-card">
+        <h2 class="shop-card-title">SFX</h2>
+        <p class="shop-card-desc">Free sound effects collection for your video edits.</p>
+        <p class="shop-price">FREE</p>
+        <a class="shop-btn" href="https://drive.google.com/drive/folders/1-190Tkk6gEPCGESUGdSZvxOBc4sTszc9?usp=sharing" target="_blank" rel="noopener noreferrer">Download</a>
+      </article>
+
+      <article class="shop-card">
+        <h2 class="shop-card-title">PAPER TEXTURES PACK</h2>
+        <p class="shop-card-desc">Free paper texture assets for cinematic overlays.</p>
+        <p class="shop-price">FREE</p>
+        <a class="shop-btn" href="https://drive.google.com/drive/folders/1H3m-tHovHF4whac0WWB1K1b_yUkObDjM?usp=sharing" target="_blank" rel="noopener noreferrer">Download</a>
+      </article>
+
+      <article class="shop-card">
+        <h2 class="shop-card-title">FRAME</h2>
+        <p class="shop-card-desc">Free frame assets to style your reels and shorts.</p>
+        <p class="shop-price">FREE</p>
+        <a class="shop-btn" href="https://drive.google.com/drive/folders/1f1Off7Y2j5zineAienlcTskZhLCRFug0?usp=sharing" target="_blank" rel="noopener noreferrer">Download</a>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-name">AMARESH SHARMA</div>
+    <div class="foot-copy">&#169; 2026 All rights reserved</div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="works.html">Work</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

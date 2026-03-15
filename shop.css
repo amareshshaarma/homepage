@@ -1,0 +1,91 @@
+.shop-page {
+  padding: 130px 56px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.shop-hero {
+  margin-bottom: 40px;
+}
+
+.shop-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1;
+  margin: 12px 0 16px;
+}
+
+.shop-desc {
+  color: var(--muted);
+  max-width: 720px;
+  font-size: 1.05rem;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.shop-card {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 18px;
+  padding: 26px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.shop-card:hover {
+  border-color: var(--yellow);
+  transform: translateY(-4px);
+}
+
+.shop-card-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.shop-card-desc {
+  color: var(--muted);
+  min-height: 44px;
+  margin-bottom: 18px;
+}
+
+.shop-price {
+  font-family: 'Unbounded', sans-serif;
+  color: var(--yellow);
+  margin-bottom: 18px;
+}
+
+.shop-btn {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.shop-btn:hover {
+  background: var(--yellow);
+  color: #0d0d0d;
+}
+
+@media (max-width: 980px) {
+  .shop-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .shop-page {
+    padding: 110px 20px 60px;
+  }
+
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
+}
