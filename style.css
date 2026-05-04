@@ -45,11 +45,11 @@
   html[data-theme="light"] .about-right,
   html[data-theme="light"] .skills-right,
   html[data-theme="light"] .yt-block { background: #ffffff; }
-  html[data-theme="light"] .client-row { background: #ffffff; }
+  html[data-theme="light"] .client-card { background: #ffffff; }
   html[data-theme="light"] .ticker-wrap { background: #ffffff; }
   html[data-theme="light"] .srv-card,
   html[data-theme="light"] .srv-card:hover { background: #ffffff; }
-  html[data-theme="light"] .client-col-type { color: rgba(17,19,23,.92); }
+  html[data-theme="light"] .client-type { color: rgba(17,19,23,.92); }
   html[data-theme="light"] .stat:hover { background: #ffffff; }
   html[data-theme="light"] .arrow-btn {
     border-color: rgba(17,19,23,.35);
@@ -707,44 +707,38 @@
     padding: 100px 56px;
     border-bottom: 1px solid var(--border);
   }
-  .client-table {
+  .client-grid {
     margin-top: 48px;
-    border: 1px solid var(--border);
-  }
-  .client-row {
     display: grid;
-    grid-template-columns: minmax(230px, 1fr) 2fr;
-    border-bottom: 1px solid var(--border);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    align-items: stretch;
+  }
+  .client-card {
     background: var(--black);
+    padding: 40px 34px;
+    min-height: 170px;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
-  .client-row:last-child { border-bottom: none; }
-  .client-col {
-    padding: 22px 24px;
-  }
-  .client-col-type {
+  .client-type {
     font-family: 'Unbounded', sans-serif;
     font-weight: 700;
-    font-size: clamp(.9rem, 1.4vw, 1.1rem);
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
     letter-spacing: -.01em;
     color: var(--white);
-    border-right: 1px solid var(--border);
-  }
-  .client-head .client-col {
-    font-size: .72rem;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    color: var(--yellow);
-    padding-top: 14px;
-    padding-bottom: 14px;
-  }
-  .client-head .client-col-type {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
+    margin-bottom: 16px;
   }
   .client-work {
-    font-size: clamp(.8rem, 1.2vw, .9rem);
+    font-size: clamp(.85rem, 1.2vw, 1rem);
     line-height: 1.7;
     color: rgba(245,242,235,.58);
+    max-width: 42ch;
+    overflow-wrap: anywhere;
   }
 
   /* â”€â”€ SKILLS â”€â”€ */
@@ -918,10 +912,9 @@
     .srv-grid { grid-template-columns: 1fr 1fr; }
     .srv-card { padding: 36px 28px; }
     .client-diversity { padding: 60px 24px; }
-    .client-row { grid-template-columns: 1fr; }
-    .client-col { padding: 18px 20px; }
-    .client-col-type { border-right: none; border-bottom: 1px solid var(--border); }
-    .client-head { display: none; }
+    .client-grid { grid-template-columns: 1fr; }
+    .client-card { padding: 30px 24px; min-height: 0; }
+    .client-type { font-size: clamp(1rem, 4.8vw, 1.35rem); }
 
     /* Skills */
     .skills { grid-template-columns: 1fr; }
@@ -984,7 +977,7 @@
     .srv-grid { grid-template-columns: 1fr; }
     .srv-card { padding: 32px 24px; }
     .client-diversity { padding: 48px 20px; }
-    .client-col { padding: 16px 18px; }
+    .client-card { padding: 26px 20px; }
 
     .skills-left, .skills-right { padding: 48px 20px; }
 
@@ -1011,7 +1004,7 @@
     .services { padding: 40px 16px; }
     .srv-card { padding: 28px 20px; }
     .client-diversity { padding: 40px 16px; }
-    .client-col { padding: 14px 16px; }
+    .client-card { padding: 22px 16px; }
     .cta { margin: 24px 16px; padding: 36px 20px; }
     footer { padding: 24px 16px; }
     .stats-strip { grid-template-columns: 1fr 1fr; }
