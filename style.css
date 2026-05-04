@@ -585,6 +585,17 @@
     transform: scale(1.03) translateY(-4px);
     box-shadow: 0 20px 60px rgba(0,0,0,.7), 0 0 0 1px rgba(212,245,14,.15);
   }
+  .reel-thumb::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background: var(--yellow);
+    transition: width .4s ease;
+  }
+  .reel-card:hover .reel-thumb::after { width: 100%; }
 
   /* YouTube cards â€” 16:9 â€” 3 up desktop */
   .yt-card { flex: 0 0 calc((100% - 40px) / 3); }
@@ -608,7 +619,7 @@
     width: 0;
     transition: width .4s ease;
   }
-  .yt-card:hover .yt-bar { width: 35%; }
+  .yt-card:hover .yt-bar { width: 100%; }
 
   /* Shared card elements */
   .portfolio-video {
@@ -724,6 +735,26 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+    transition: background .3s;
+    box-shadow: var(--shadow-soft), inset 0 0 0 1px rgba(255,255,255,.01);
+  }
+  .client-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background: var(--yellow);
+    transition: height .4s ease;
+  }
+  .client-card:hover {
+    background: #0c0c0c;
+  }
+  .client-card:hover::before {
+    height: 100%;
   }
   .client-type {
     font-family: 'Unbounded', sans-serif;
