@@ -266,7 +266,7 @@
     font-size: clamp(.85rem, 1.5vw, 1.1rem);
     line-height: 1.8;
     color: rgba(245,242,235,.55);
-    max-width: 540px;
+    max-width: 900px;
     margin-bottom: 48px;
     opacity:0; animation: fadeUp .8s .7s forwards;
   }
